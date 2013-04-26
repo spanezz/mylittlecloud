@@ -1,0 +1,50 @@
+{% load i18n %}
+{% load url from future %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head_resources %}
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <script src="js/jquery-2.0.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  {% endblock %}
+  <title>{% block title %}My Little Cloud{% endblock %}</title>
+</head>
+<body>
+  <header class="container">
+    <div class="row-fluid">
+      <div class="span1">My Little Cloud</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Message handling -->
+    {% if messages %}
+    {% for message in messages %}
+    <div {% if message.tags %} class="alert {{ message.tags }}"{% endif %}>
+      <a class="close" data-dismiss="alert" href="#">&times;</a>
+      {{ message }}
+    </div>
+    {% endfor %}
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $(".alert").alert();
+      });
+    </script>
+    {% endif %}
+    <!-- End of message handling -->
+    
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </div>
+
+  <footer>
+  </footer>
+</body>
+</html>
