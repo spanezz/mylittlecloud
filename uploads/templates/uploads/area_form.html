@@ -2,6 +2,8 @@
 {% load i18n %}
 {% load url from future %}
 
+{% block navclass_uploads %}active{% endblock %}
+
 {% block head_resources %}
 {{block.super}}
 <link href="{{ STATIC_URL }}css/datepicker.css" rel="stylesheet"/>
