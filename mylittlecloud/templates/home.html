@@ -1,4 +1,17 @@
 {% extends "base.html" %}
+
+{% load url from future %}
+
 {% block content %}
-Ciao
+
+<div class="hero-unit">
+  <h1>My little cloud</h1>
+  <p>Fixing internet papercuts since 2013.</p>
+  <p>
+  {% if user.is_authenticated %}
+  <a class="btn btn-primary btn-large" href="{% url 'uploads_list' %}">Uploads</a>
+  {% endif %}
+  </p>
+</di>
+
 {% endblock %}
