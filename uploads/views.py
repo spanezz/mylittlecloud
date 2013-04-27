@@ -10,6 +10,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 import uploads.models as umodels
 from django.utils.timezone import now
+import datetime
 
 @login_required
 def list_own(request):
@@ -19,21 +20,66 @@ def list_own(request):
     })
 
 class AreaForm(forms.ModelForm):
+    expiry = forms.DateField(required=True,
+                             initial=now,
+                             input_formats=("%Y-%m-%d",),
+                             widget=forms.DateInput(format="%Y-%m-%d"))
+
+class AreaCreateForm(AreaForm):
     class Meta:
         model = umodels.Area
+        exclude = ('owner', 'uuid')
+
+    def validate_unique(self):
+        exclude = self._get_validation_exclusions()
+        exclude.remove("owner")
+        try:
+            self.instance.validate_unique(exclude=exclude)
+        except forms.ValidationError, e:
+            self._update_errors(e.message_dict)
+
+class AreaEditForm(AreaForm):
+    class Meta:
+        model = umodels.Area
+        exclude = ('owner', 'name', 'uuid')
+
+    def validate_unique(self):
+        exclude = self._get_validation_exclusions()
+        exclude.remove("owner")
+        try:
+            self.instance.validate_unique(exclude=exclude)
+        except forms.ValidationError, e:
+            self._update_errors(e.message_dict)
 
 class AreaCreate(CreateView):
     model = umodels.Area
-    form_class = AreaForm
+    form_class = AreaCreateForm
     success_url = reverse_lazy("uploads_list")
+
+    def get_initial(self):
+        initial = super(AreaCreate, self).get_initial().copy()
+        initial["expiry"] = now().date() + datetime.timedelta(days=30)
+        return initial
+
+    def get_form(self, form_class):
+        form = super(AreaCreate, self).get_form(form_class)
+        form.instance.owner = self.request.user
+        return form
+
+    def form_valid(self, form):
+        import uuid
+        self.object = form.save(commit=False)
+        self.object.owner = self.request.user
+        self.object.uuid = str(uuid.uuid4())
+        self.object.save()
+        return redirect(self.get_success_url())
 
 class AreaUpdate(UpdateView):
     model = umodels.Area
-    form_class = AreaForm
+    form_class = AreaEditForm
     success_url = reverse_lazy("uploads_list")
 
 class AreaDelete(DeleteView):
     model = umodels.Area
-    form_class = AreaForm
     success_url = reverse_lazy("uploads_list")
 

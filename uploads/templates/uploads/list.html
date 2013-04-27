@@ -7,13 +7,28 @@
 
 <a href="{% url 'uploads_create' %}">Create</a>
 
-<ul>
-{% for a in areas %}
-<li>
-<a href="{% url 'uploads_edit' pk=a.pk %}">{{a.name}}</a> (<a href="{% url 'uploads_delete' pk=a.pk %}">delete</a>)
-</li>
-{% endfor %}
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Disk space</th>
+      <th>Public link</th>
+      <th>Expires</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for a in areas %}
+  <tr>
+    <td><a href="TODO">{{a.name}}</a></td>
+    <td>??/{{a.max_size}}MB</td>
+    <td><a href="TODO">{{a.uuid}}</a></td>
+    <td>{{a.expiry}}</td>
+    <td><a href="{% url 'uploads_edit' pk=a.pk %}">edit</a> <a href="{% url 'uploads_delete' pk=a.pk %}">delete</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
 
 {% endblock %}
 

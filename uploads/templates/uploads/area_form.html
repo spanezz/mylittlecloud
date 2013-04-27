@@ -4,6 +4,13 @@
 
 {% block head_resources %}
 {{block.super}}
+<link href="{{ STATIC_URL }}css/datepicker.css" rel="stylesheet"/>
+<script src="{{ STATIC_URL }}js/bootstrap-datepicker.js"></script>
+<script>
+  $(function() {
+    $("#id_expiry").datepicker({format: "yyyy-mm-dd"})
+  });
+</script>
 {{form.media}}
 {% endblock %}
 
