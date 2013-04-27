@@ -1,3 +1,4 @@
 .egt
+*.swp
 *.pyc
 mylittlecloud/settings.py

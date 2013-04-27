@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic.simple import direct_to_template, redirect_to
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -6,8 +7,8 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'mylittlecloud.views.home', name='home'),
-    # url(r'^mylittlecloud/', include('mylittlecloud.foo.urls')),
+    url(r'^$', direct_to_template, {'template': 'home.html'}, name='home'),
+    url(r'^uploads/', include('uploads.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

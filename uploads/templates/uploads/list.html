@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href="TODO">Create</a>
+
+<ul>
+{% for a in areas %}
+<li>
+  <a ref="TODO">{{a.name}}</a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
+
