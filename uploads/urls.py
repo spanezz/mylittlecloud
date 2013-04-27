@@ -9,4 +9,5 @@ urlpatterns = patterns('uploads.views',
     url(r'^create/$', login_required(views.AreaCreate.as_view()), name='uploads_create'),
     url(r'^edit/(?P<pk>\d+)/$', login_required(views.AreaUpdate.as_view()), name='uploads_edit'),
     url(r'^delete/(?P<pk>\d+)/$', login_required(views.AreaDelete.as_view()), name='uploads_delete'),
+    url(r'^area/(?P<uuid>[^/]+)/$', 'public', name='uploads_public'),
 )

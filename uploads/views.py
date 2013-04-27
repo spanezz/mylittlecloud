@@ -19,6 +19,12 @@ def list_own(request):
         "areas": areas,
     })
 
+def public(request, uuid):
+    area = get_object_or_404(umodels.Area, uuid=uuid)
+    return render(request, "uploads/public.html", {
+        "area": area,
+    })
+
 class AreaForm(forms.ModelForm):
     expiry = forms.DateField(required=True,
                              initial=now,

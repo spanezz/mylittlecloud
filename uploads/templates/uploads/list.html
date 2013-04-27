@@ -22,7 +22,7 @@
   <tr>
     <td><a href="TODO">{{a.name}}</a></td>
     <td>??/{{a.max_size}}MB</td>
-    <td><a href="TODO">{{a.uuid}}</a></td>
+    <td><a href="{% url 'uploads_public' uuid=a.uuid %}">[link]</a></td>
     <td>{{a.expiry}}</td>
     <td><a href="{% url 'uploads_edit' pk=a.pk %}">edit</a> <a href="{% url 'uploads_delete' pk=a.pk %}">delete</a></td>
   </tr>

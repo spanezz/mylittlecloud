@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block navclass_uploads %}active{% endblock %}
+
+{% block content %}
+
+<h1>{{area.name}}</h1>
+
+<p>{{area.description}}</p>
+
+<p>??/{{area.max_size}}MB</p>
+
+<p>Expires: {{area.expiry}}</p>
+
+TODO: upload
+
+{% endblock %}
+
