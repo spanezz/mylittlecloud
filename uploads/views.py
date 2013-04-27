@@ -6,6 +6,8 @@ from django.shortcuts import redirect, render, render_to_response, get_object_or
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.forms.formsets import formset_factory
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
 import uploads.models as umodels
 from django.utils.timezone import now
 
@@ -15,3 +17,23 @@ def list_own(request):
     return render(request, "uploads/list.html", {
         "areas": areas,
     })
+
+class AreaForm(forms.ModelForm):
+    class Meta:
+        model = umodels.Area
+
+class AreaCreate(CreateView):
+    model = umodels.Area
+    form_class = AreaForm
+    success_url = reverse_lazy("uploads_list")
+
+class AreaUpdate(UpdateView):
+    model = umodels.Area
+    form_class = AreaForm
+    success_url = reverse_lazy("uploads_list")
+
+class AreaDelete(DeleteView):
+    model = umodels.Area
+    form_class = AreaForm
+    success_url = reverse_lazy("uploads_list")
+

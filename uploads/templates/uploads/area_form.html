@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block head_resources %}
+{{block.super}}
+{{form.media}}
+{% endblock %}
+
+{% block title %}{% trans "Area" %}{% endblock %}
+
+{% block content %}
+<form action="." method="POST">{% csrf_token %}
+{{form}}
+<input type="submit"></input>
+</form>
+{% endblock %}
+

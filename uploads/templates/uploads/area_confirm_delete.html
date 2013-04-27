@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<p>{% trans 'Are you sure that you would like to delete this area?' %}</p>
+
+<div id="comment_preview">{{object.name}}</div>
+
+<form method="POST" action=".">{% csrf_token %}
+    <input type="submit" value="Yes"> <a href="{{ next }}">No</a>
+</form>
+{% endblock %}
