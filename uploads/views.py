@@ -11,7 +11,7 @@ from django.utils.timezone import now
 
 @login_required
 def list_own(request):
-    areas = umodels.Area.objects.find(owner=request.user, expiry__gte=now().date()).order_by("name")
+    areas = umodels.Area.objects.filter(owner=request.user, expiry__gte=now().date()).order_by("name")
     return render(request, "uploads/list.html", {
         "areas": areas,
     })
