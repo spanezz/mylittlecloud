@@ -17,9 +17,8 @@ class Area(models.Model):
         unique_together = ["owner", "name"]
 
 def get_upload_path(instance, filename):
-    return os.path.join(instance.area.owner.username, instance.area.name)
+    return os.path.join(instance.area.owner.username, instance.area.name, os.path.basename(filename))
 
 class File(models.Model):
-    area = models.ForeignKey(Area)
+    area = models.ForeignKey(Area, related_name="files")
     file = models.FileField(upload_to=get_upload_path)
-

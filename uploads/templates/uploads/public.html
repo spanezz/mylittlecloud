@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load url from future %}
+{% load i18n %}
 
 {% block navclass_uploads %}active{% endblock %}
 
@@ -13,7 +14,38 @@
 
 <p>Expires: {{area.expiry}}</p>
 
-TODO: upload
+<h2>{% trans 'Files' %}</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in files %}
+    <tr>
+      <td>{{f.name}}</td>
+      <td>{{f.size}}</td>
+      <td>
+        <form action="{% url 'uploads_delete_file' uuid=area.uuid %}" method="post">{% csrf_token %}
+          <input type="hidden" name="file" value="{{f.id}}">
+          <input type="submit" value="{% trans 'Delete' %}">
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Upload</h2>
+
+<form action="." method="post" enctype="multipart/form-data">{% csrf_token %}
+{{form}}
+<input type="submit"></input>
+</form>
 
 {% endblock %}
 

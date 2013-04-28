@@ -19,11 +19,52 @@ def list_own(request):
         "areas": areas,
     })
 
+class UploadForm(forms.ModelForm):
+    class Meta:
+        model = umodels.File
+        exclude = ('area',)
+
 def public(request, uuid):
     area = get_object_or_404(umodels.Area, uuid=uuid)
+
+    if request.method == "POST":
+        form = UploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            f = form.save(commit=False)
+            f.area = area
+            f.save()
+    else:
+        form = UploadForm()
+
+    files = []
+    for f in area.files.order_by("file"):
+        files.append({
+            "id": f.id,
+            "name": f.file.name,
+            "size": f.file.size,
+        })
+
+
     return render(request, "uploads/public.html", {
         "area": area,
+        "form": form,
+        "files": files,
     })
+
+def delete_file(request, uuid):
+    if request.method != "POST":
+        return http.HttpResponseBadRequest("Only POST is accepted")
+
+    area = get_object_or_404(umodels.Area, uuid=uuid)
+    f = get_object_or_404(umodels.File, pk=request.POST["file"])
+    if f.area != area:
+        return http.HttpResponseNotFound("Requested file not found")
+
+    f.file.delete()
+    f.delete()
+
+    return redirect('uploads_public', uuid=area.uuid)
+
 
 class AreaForm(forms.ModelForm):
     expiry = forms.DateField(required=True,

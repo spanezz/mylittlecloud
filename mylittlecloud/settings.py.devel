@@ -159,3 +159,5 @@ LOGGING = {
 }
 
 LOGIN_REDIRECT_URL = reverse_lazy("home")
+
+FILE_UPLOAD_PERMISSIONS = 0640
