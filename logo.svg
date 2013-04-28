@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/enrico/dev/mylittlecloud/logo.png"
+   inkscape:export-xdpi="12.764729"
+   inkscape:export-ydpi="12.764729">
+  <defs
+     id="defs4">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4078">
+      <rect
+         style="color:#000000;fill:#c4fdff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:1.01169252;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect4080"
+         width="358"
+         height="234.40619"
+         x="86.865761"
+         y="305.45688"
+         ry="31.106998" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="306.98385"
+     inkscape:cy="587.87083"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1272"
+     inkscape:window-height="970"
+     inkscape:window-x="1310"
+     inkscape:window-y="61"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path2991"
+       sodipodi:cx="320.21835"
+       sodipodi:cy="295.75793"
+       sodipodi:expansion="0"
+       sodipodi:revolution="0.55007976"
+       sodipodi:radius="184.58171"
+       sodipodi:argument="-2.7755294"
+       sodipodi:t0="0.99900001"
+       d="m 464.06066,411.42901 c -0.13326,0.16571 -0.2668,0.3312 -0.40064,0.49646"
+       inkscape:export-filename="/home/enrico/dev/mylittlecloud/logo.png"
+       inkscape:export-xdpi="12.62484"
+       inkscape:export-ydpi="12.62484" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;stroke-width:5.77023745;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path2999"
+       sodipodi:cx="228.29448"
+       sodipodi:cy="324.04221"
+       sodipodi:expansion="0"
+       sodipodi:revolution="0.5"
+       sodipodi:radius="114.15171"
+       sodipodi:argument="-3.1327434"
+       sodipodi:t0="0"
+       d="m 114.14724,323.03206 c 0.55026,-62.17971 52.97768,-113.68736 115.15739,-113.1371 62.17971,0.55027 113.68735,52.97769 113.13709,115.15739"
+       transform="matrix(1.6934561,0,0,1.5911371,-87.335138,7.7382645)"
+       inkscape:tile-cx="213.64724"
+       inkscape:tile-cy="275.55237"
+       inkscape:tile-w="199.13348"
+       inkscape:tile-h="99.133485"
+       inkscape:tile-x0="114.08049"
+       inkscape:tile-y0="225.98563"
+       inkscape:export-filename="/home/enrico/dev/mylittlecloud/logo.png"
+       inkscape:export-xdpi="12.62484"
+       inkscape:export-ydpi="12.62484" />
+    <g
+       id="g4060"
+       transform="translate(60.13424,20.90531)"
+       clip-path="url(#clipPath4078)"
+       inkscape:export-filename="/home/enrico/dev/mylittlecloud/logo.png"
+       inkscape:export-xdpi="12.62484"
+       inkscape:export-ydpi="12.62484">
+      <use
+         transform="translate(-7.711217,-25.061455)"
+         id="use3983"
+         xlink:href="#path2999"
+         inkscape:tiled-clone-of="#path2999"
+         y="0"
+         x="0"
+         style="fill:#ff0000;stroke:#ff0000"
+         width="744.09448"
+         height="1052.3622" />
+      <use
+         id="use3985"
+         transform="matrix(0.98,0,0,0.993,-2.1798898,-16.974084)"
+         xlink:href="#path2999"
+         inkscape:tiled-clone-of="#path2999"
+         y="0"
+         x="0"
+         style="fill:#ffcf00;stroke:#ff9e00;stroke-opacity:1"
+         width="744.09448"
+         height="1052.3622" />
+      <use
+         id="use3987"
+         transform="matrix(0.96,0,0,0.986,3.351438,-8.8867121)"
+         xlink:href="#path2999"
+         inkscape:tiled-clone-of="#path2999"
+         y="0"
+         x="0"
+         style="fill:#61ff00;stroke:#d0ff00;stroke-opacity:1"
+         width="744.09448"
+         height="1052.3622" />
+      <use
+         id="use3989"
+         transform="matrix(0.94,0,0,0.979,8.882764,-0.7993411)"
+         xlink:href="#path2999"
+         inkscape:tiled-clone-of="#path2999"
+         y="0"
+         x="0"
+         style="fill:#00ff6e;stroke:#00ff6e"
+         width="744.09448"
+         height="1052.3622" />
+      <use
+         id="use3991"
+         transform="matrix(0.92,0,0,0.972,14.414092,7.2880319)"
+         xlink:href="#path2999"
+         inkscape:tiled-clone-of="#path2999"
+         y="0"
+         x="0"
+         style="fill:#00c2ff;stroke:#00c2ff"
+         width="744.09448"
+         height="1052.3622" />
+      <use
+         id="use3993"
+         transform="matrix(0.9,0,0,0.965,19.94542,15.375403)"
+         xlink:href="#path2999"
+         inkscape:tiled-clone-of="#path2999"
+         y="0"
+         x="0"
+         style="fill:#0d00ff;stroke:#0d00ff"
+         width="744.09448"
+         height="1052.3622" />
+      <use
+         id="use3995"
+         transform="matrix(0.88,0,0,0.958,25.476746,23.462774)"
+         xlink:href="#path2999"
+         inkscape:tiled-clone-of="#path2999"
+         y="0"
+         x="0"
+         style="fill:#4000ff;fill-opacity:1;stroke:#9f33cc;stroke-width:0.99981254;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         width="744.09448"
+         height="1052.3622" />
+      <use
+         id="use3995-0"
+         transform="matrix(0.83606655,0,0,0.89776523,37.992714,48.853109)"
+         xlink:href="#path2999"
+         inkscape:tiled-clone-of="#path2999"
+         y="0"
+         x="0"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.99981254;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         width="744.09448"
+         height="1052.3622" />
+    </g>
+    <path
+       style="fill:#c4fdff;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 93.285719,556.07647 c -35.2381,-56.19048 46.666671,-163.80953 138.571431,-95.71429 1.90476,-82.38095 130.95238,-87.61904 132.85714,-1.42856 68.09523,-56.66667 180.47619,42.38066 122.85714,97.14256 z"
+       id="path2985"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-xdpi="12.62484"
+       inkscape:export-ydpi="12.62484"
+       inkscape:export-filename="/home/enrico/dev/mylittlecloud/logo.png" />
+  </g>
+</svg>

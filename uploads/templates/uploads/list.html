@@ -1,33 +1,43 @@
 {% extends "base.html" %}
 {% load url from future %}
+{% load i18n %}
 
 {% block navclass_uploads %}active{% endblock %}
 
+{% block title %}{% trans 'File areas' %}{% endblock %}
+
 {% block content %}
 
-<a href="{% url 'uploads_create' %}">Create</a>
+<h1>File areas</h1>
 
-<table>
+<table class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Disk space</th>
-      <th>Public link</th>
-      <th>Expires</th>
-      <th>Actions</th>
+      <th>{% trans 'Name' %}</th>
+      <th>{% trans 'Disk space' %}</th>
+      <th>{% trans 'Public link' %}</th>
+      <th>{% trans 'Expires' %}</th>
+      <th>{% trans 'Actions' %}</th>
     </tr>
   </thead>
   <tbody>
   {% for a in areas %}
-  <tr>
+  <tr {% if a.expired %}class="warning"{% endif %}>
     <td><a href="TODO">{{a.name}}</a></td>
-    <td>??/{{a.max_size}}MB</td>
+    <td>{{a.space_used|filesizeformat}} / {{a.max_size}} MB</td>
     <td><a href="{% url 'uploads_public' uuid=a.uuid %}">[link]</a></td>
     <td>{{a.expiry}}</td>
     <td><a href="{% url 'uploads_edit' pk=a.pk %}">edit</a> <a href="{% url 'uploads_delete' pk=a.pk %}">delete</a></td>
   </tr>
   {% endfor %}
   </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="5">
+        <a href="{% url 'uploads_create' %}">{% trans "Create new file area" %}</a>
+      </td>
+    </tr>
+  </tfoot>
 </table>
 
 {% endblock %}

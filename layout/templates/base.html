@@ -17,7 +17,10 @@
   <header class="container">
     <div class="navbar">
       <div class="navbar-inner">
-        <a class="brand" href="{% url 'home' %}">My Little Cloud</a>
+        <a class="brand" href="{% url 'home' %}">
+          My Little Cloud
+          <img src="{{STATIC_URL}}img/logo.png"></img>
+        </a>
         <ul class="nav">
           <li class="{% block navclass_uploads %}{% endblock %}"><a href="{% url 'uploads_list' %}">Uploads</a></li>
           {% if user.is_authenticated %}

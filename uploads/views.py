@@ -11,10 +11,13 @@ from django.core.urlresolvers import reverse_lazy
 import uploads.models as umodels
 from django.utils.timezone import now
 import datetime
+import os.path
 
 @login_required
 def list_own(request):
-    areas = umodels.Area.objects.filter(owner=request.user, expiry__gte=now().date()).order_by("name")
+    areas = list(umodels.Area.objects.filter(owner=request.user).order_by("name"))
+    # , expiry__gte=now().date()
+    areas.sort(key=lambda a:a.expired)
     return render(request, "uploads/list.html", {
         "areas": areas,
     })
@@ -40,7 +43,8 @@ def public(request, uuid):
     for f in area.files.order_by("file"):
         files.append({
             "id": f.id,
-            "name": f.file.name,
+            "url": f.file.url,
+            "name": os.path.basename(f.file.name),
             "size": f.file.size,
         })
 
