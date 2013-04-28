@@ -45,7 +45,7 @@ div.progress {
   <tbody>
     {% for f in files %}
     <tr>
-      <td><a href="{{MEDIA_URL}}{{f.url}}">{{f.name}}</a></td>
+      <td><a href="{{f.url}}">{{f.name}}</a></td>
       <td>{{f.size|filesizeformat}}</td>
       <td>
         <form action="{% url 'uploads_delete_file' uuid=area.uuid %}" method="post" class="action-form">{% csrf_token %}
