@@ -2,6 +2,18 @@
 {% load url from future %}
 {% load i18n %}
 
+{% block head_resources %}
+{{block.super}}
+<style>
+td.size div.progress {
+  margin: 0
+}
+div.size-text {
+  text-align: center;
+}
+</style>
+{% endblock %}
+
 {% block navclass_uploads %}active{% endblock %}
 
 {% block title %}{% trans 'File areas' %}{% endblock %}
@@ -24,7 +36,13 @@
   {% for a in areas %}
   <tr {% if a.expired %}class="warning"{% endif %}>
     <td><a href="TODO">{{a.name}}</a></td>
-    <td>{{a.space_used|filesizeformat}} / {{a.max_size}} MB</td>
+    <td class="size">
+      <div class="progress progress-striped">
+        <div class="bar" style="width: {{a.size_percent}}%">
+        </div>
+      </div>
+      <div class="size-text">{{a.size_used|filesizeformat}} / {{a.max_size}} MB</div>
+    </td>
     <td><a href="{% url 'uploads_public' uuid=a.uuid %}">[link]</a></td>
     <td>{{a.expiry}}</td>
     <td><a href="{% url 'uploads_edit' pk=a.pk %}">edit</a> <a href="{% url 'uploads_delete' pk=a.pk %}">delete</a></td>

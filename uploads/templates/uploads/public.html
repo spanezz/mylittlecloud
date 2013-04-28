@@ -18,6 +18,9 @@ form.upload-form label {
   display: inline;
   vertical-align: middle;
 }
+div.progress {
+  margin: 0
+}
 </style>
 {% endblock %}
 
@@ -73,7 +76,11 @@ form.upload-form label {
     </tr>
     <tr>
       <td colspan="3">
-        {% blocktrans with used=area.space_used|filesizeformat max=area.max_size expiry=area.expiry %}
+        <div class="progress progress-striped">
+          <div class="bar" style="width: {{area.size_percent}}%">
+          </div>
+        </div>
+        {% blocktrans with used=area.size_used|filesizeformat max=area.max_size expiry=area.expiry %}
           Used: {{used}} / {{max}} MB, expires: {{expiry}}
         {% endblocktrans %}
       </td>

@@ -24,7 +24,15 @@ class Area(models.Model):
         """
         return self.expiry < now().date()
 
-    def space_used(self):
+    @property
+    def size_percent(self):
+        """
+        Return the space currently in use as a percentage of the total size
+        """
+        return int(100.0 * self.size_used / (self.max_size * 1024 * 1024))
+
+    @property
+    def size_used(self):
         """
         Return the space currently in use for this area
         """

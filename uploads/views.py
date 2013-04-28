@@ -29,6 +29,8 @@ class UploadForm(forms.ModelForm):
 
 def public(request, uuid):
     area = get_object_or_404(umodels.Area, uuid=uuid)
+    if area.expired:
+        return http.HttpResponseNotFound("Requested area has expired")
 
     if request.method == "POST":
         form = UploadForm(request.POST, request.FILES)
