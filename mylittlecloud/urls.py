@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse_lazy
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', direct_to_template, {'template': 'home.html'}, name='home'),
+    url(r'^license/$', direct_to_template, {'template': 'license.html'}, name='license'),
     url(r'^uploads/', include('uploads.urls')),
 
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', {
