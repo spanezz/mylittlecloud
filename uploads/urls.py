@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, url
-from django.views.generic.simple import direct_to_template, redirect_to
 from django.contrib.auth.decorators import login_required
 from . import views
 

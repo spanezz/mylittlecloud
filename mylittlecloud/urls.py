@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic.simple import direct_to_template, redirect_to
+from django.views.generic.base import TemplateView
 from django.core.urlresolvers import reverse_lazy
 
 # Uncomment the next two lines to enable the admin:
@@ -8,8 +8,8 @@ from django.core.urlresolvers import reverse_lazy
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', direct_to_template, {'template': 'home.html'}, name='home'),
-    url(r'^license/$', direct_to_template, {'template': 'license.html'}, name='license'),
+    url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
+    url(r'^license/$', TemplateView.as_view(template_name='license.html'), name='license'),
     url(r'^uploads/', include('uploads.urls')),
 
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', {
